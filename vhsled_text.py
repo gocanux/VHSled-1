@@ -3,7 +3,7 @@ import time
 from vhsled_spi import writestrip
 from vhsled_colour import *
 
-
+bright_colors = [Color(0,255,0),Color(0,0,255),Color(255,255,0),Color(255,0,255),Color(0,255,255)]
 
 characters = {}
 with open('/home/pi/font.txt', 'r') as m_f:
@@ -24,6 +24,7 @@ with open('/home/pi/font.txt', 'r') as m_f:
 
 def scrollText(pixels,spidev, characters,text, text_c, background_c, speed):
 	setFullColor(pixels,spidev,background_c)
+	text_c = random.choice(bright_colors)
 	text_matrix = []
 	padding_pixels = pixels
 	character_spacing = [0 for i in range(len(pixels[0]))]
