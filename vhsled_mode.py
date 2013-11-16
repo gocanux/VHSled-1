@@ -17,7 +17,7 @@ def countdown_timer(pixels, c, time_s):
 
 GPIO.setmode(GPIO.BCM)
 
-width = 26
+width = 42
 height = 10
 strings = ["VHS ! VHS !", "Welcome to the Bunker","drink beer", "hack the planet", "42", "feed donatio", "go hack something", "the cake is a lie !"]
 oddstrings  = ["subliminal message","They Live","fight the power","buy our stuff!"]
@@ -57,7 +57,7 @@ while True:
 				rainbowCycle(ledpixels,spidev, 0.00)
 		if text == "clock": #undocumented mode to test the display
 			while True:
-				clockText(ledpixels,spidev,characters,":", random.choice(bright_colors),Color(0,0,0),2)
+				clockText(ledpixels,spidev,characters,":", random.choice(bright_colors),Color(0,0,0),1)
 		if text == "subliminal": #undocumented mode to test the display
 			while True:
 				scrollText(ledpixels,spidev,characters,random.choice(oddstrings),random.choice(bright_colors),random.choice(bright_colors),0.001)

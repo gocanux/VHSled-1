@@ -10,7 +10,7 @@ from vhsled_colour import *
 GPIO.setmode(GPIO.BCM)
 
 #properties of our display
-width = 26
+width = 42
 height = 10
 strings = ["VHS ! VHS !", "Welcome to the Bunker","drink beer", "hack the planet", "42", "feed donatio", "go hack something", "the cake is a lie !"]
 oddstrings  = ["subliminal message","They Live","fight the power","buy our stuff!"]

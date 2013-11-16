@@ -8,23 +8,23 @@ from vhsled_colour import *
 
 
 def countdown_timer(pixels, c, time_s):
-	setFullColor(pixels,spidev,c)
-	for i in range (0,height):
-		for j in range(0,width):
-			setpixelcolor(pixels,j,i,Color(0,0,0))
-			writestrip(pixels,spidev)
-			time.sleep(time_s/(width*height))
+        setFullColor(pixels,spidev,c)
+        for i in range (0,height):
+                for j in range(0,width):
+                        setpixelcolor(pixels,j,i,Color(0,0,0))
+                        writestrip(pixels,spidev)
+                        time.sleep(time_s/(width*height))
 
 GPIO.setmode(GPIO.BCM)
 
-width = 26
+width = 42
 height = 10
 strings = ["VHS ! VHS !", "Welcome to the Bunker","drink beer", "hack the planet", "42", "feed donatio", "go hack something", "the cake is a lie !"]
 oddstrings  = ["subliminal message","They Live","fight the power","buy our stuff!"]
 
 ledpixels = []
 for i in range(0,width):
-	ledpixels.append([0]*height)
+        ledpixels.append([0]*height)
 
 spidev = file("/dev/spidev0.0", "w")
 
@@ -38,4 +38,4 @@ bright_colors = [Color(0,255,0),Color(0,0,255),Color(255,255,0),Color(255,0,255)
 
 
 while (not os.path.exists("/home/pi/stop")):
-	clockText(ledpixels,spidev,characters,":", random.choice(bright_colors),Color(0,0,0),2)
+        clockText(ledpixels,spidev,characters,":", random.choice(bright_colors),Color(0,0,0),2)
